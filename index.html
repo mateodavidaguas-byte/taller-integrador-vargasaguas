@@ -37,7 +37,6 @@ function calcularPromedio() {
     let b = parseFloat(document.getElementById("n2").value);
     let c = parseFloat(document.getElementById("n3").value);
 
-    console.log("valores capturados:", a, b, c);
 
     if (isNaN(a) || isNaN(b) || isNaN(c)) {
         document.getElementById("r").innerHTML = "Debe ingresar las tres notas.";
@@ -54,15 +53,9 @@ function calcularPromedio() {
         document.getElementById("r2").innerHTML = "Resultado: reprobado";
     }
 
-    console.log("promedio calculado");
+
 }
 
-// function calcularAntiguo(nota1, nota2) {
-//     let suma = nota1 + nota2;
-//     return suma / 2;
-// }
-
-console.log("pagina cargada");
 
 </script>
 
