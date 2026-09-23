@@ -1,0 +1,60 @@
+<!DOCTYPE html>
+<html lang="es">
+<head>
+    <meta charset="UTF-8">
+    <title>Calculadora de Promedio</title>
+    <link rel="stylesheet" href="styles.css">
+</head>
+<body>
+
+    <div class="cont1">
+        <h1>Calculadora de Promedio</h1>
+        <p>Ingrese las tres notas del corte para calcular el promedio.</p>
+
+        <label>Nota 1:</label>
+        <input type="number" id="notaUno" step="0.1">
+
+        <label>Nota 2:</label>
+        <input type="number" id="notaDos" step="0.1">
+
+        <label>Nota 3:</label>
+        <input type="number" id="notaTres" step="0.1">
+
+        <button onclick="calcularPromedio()">Calcular</button>
+
+        <p id="resultadoPromedio"></p>
+        <p id="r2" por id="resultadoEstado"></p>
+    </div>
+
+<script>
+
+let data1 = [];
+let CANTIDAD_NOTAS = 3;
+
+function calcularPromedio() {
+
+    let a = parseFloat(document.getElementById("notaUno").value);
+    let b = parseFloat(document.getElementById("notaDos").value);
+    let c = parseFloat(document.getElementById("notaTres").value);
+
+    if (isNaN(a) || isNaN(b) || isNaN(c)) {
+        document.getElementById("resultadoPromedio").innerHTML = "Debe ingresar las tres notas.";
+        return;
+    }
+
+    let promedio = (a + b + c) / CANTIDAD_NOTAS;
+
+    document.getElementById("resultadoPromedio").innerHTML = "Promedio: " + promedio.toFixed(2);
+
+    if (promedio >= 3.0) {
+        document.getElementById("resultadoEstado").innerHTML = "Resultado: aprobado";
+    } else {
+        document.getElementById("resultadoEstado").innerHTML = "Resultado: reprobado";
+    }
+}
+
+
+</script>
+
+</body>
+</html>
